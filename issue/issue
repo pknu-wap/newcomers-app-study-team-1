@@ -1,0 +1,30 @@
+---
+name: instagram clone coding
+about: 개념 정리, 과정 기록
+title: 'flutter clone instagram'
+labels: ''
+assignees: ''
+
+---
+
+## 개요
+1. 개념 정리
+2. 
+
+## ✅ To do
+- [ ] 구현 내용1
+- [ ] 구현 내용 2
+
+## 기타
+
+## main
+1. 개념 정리
+    1) colorScheme vs primarySwatch
+        [colorSchme] : 최신
+        - 개념 : 하나의 씨앗(Seed) 색상으로 전체 조화를 계산
+        - 정밀도 : 배경, 텍스트, 그림자 등 앱 전체의 색조(Tone)를 자동 생성
+        - Material 3 (최신 안드로이드 디자인)의 핵심
+        [primarySwatch] : 과거
+        - 개념 : 단순한 색상 묶음 
+        - 정밀도 : 버튼, 바 등 특정 요소 색만 바뀜
+        - Material 3 : 지원x
