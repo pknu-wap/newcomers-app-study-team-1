@@ -1,0 +1,81 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+
+enum AvatarType { TYPE1, TYPE2, TYPE3 }
+
+class AvatarWidget extends StatelessWidget {
+  final bool? haStory;
+  final String thumbPath;
+  final String? nickname;
+  final AvatarType type;
+  final double? size;
+
+  AvatarWidget({
+    super.key,
+    required this.type,
+    required this.thumbPath,
+    this.haStory,
+    this.nickname,
+    this.size = 65,
+  });
+
+  Widget type1Widget() { //스토리 유무 표시 설정
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 5), //좌우 5씩 여백
+      padding: const EdgeInsets.all(2), //모든 방향 2씩 여백
+      decoration: const BoxDecoration(  //스토리 표시 그라데이션
+        gradient: LinearGradient(
+          begin: Alignment.topRight,
+          end: Alignment.topLeft,
+          colors: [Colors.purple, Colors.orange],
+        ),
+        shape: BoxShape.circle,
+      ),
+      child: type2Widget(),
+    );
+  }
+
+  Widget type2Widget() { //스토리 없는 프로필 설정
+    return Container(
+      padding: const EdgeInsets.all(2),
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        shape: BoxShape.circle,
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(65),
+        child: SizedBox(
+          width: size,
+          height: size,
+          child: CachedNetworkImage(imageUrl: thumbPath, fit: BoxFit.cover),
+        ),
+      ),
+    );
+  }
+
+  Widget type3Widget() { //게시물 형식 설정
+    return Row(
+      children: [
+        type1Widget(),
+        Text(
+          nickname ?? '',
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16),
+        ),
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    switch (type) {
+      case AvatarType.TYPE1:
+        return type1Widget(); //스토리 유무 표시
+      case AvatarType.TYPE2:
+        return type2Widget(); //스토리 없는 프로필
+      case AvatarType.TYPE3:
+        return type3Widget(); //게시물 형식
+    }
+  }
+}
