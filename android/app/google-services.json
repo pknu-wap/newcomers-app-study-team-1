@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "489909806426",
+    "project_id": "instagramlogin-1b204",
+    "storage_bucket": "instagramlogin-1b204.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489909806426:android:a95a82c05c219d16e5bf63",
+        "android_client_info": {
+          "package_name": "com.example.newcomera_app_study_team_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrW5ARGIqc72noEVd3ks_DFUQ289OW0tA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

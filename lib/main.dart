@@ -1,9 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_clone_instagram/src/app.dart';
+import 'package:flutter_clone_instagram/firebase_options.dart';
 import 'package:flutter_clone_instagram/src/binding/init_bindings.dart';
+import 'package:flutter_clone_instagram/src/root.dart';
 import 'package:get/get.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -24,7 +28,7 @@ class MyApp extends StatelessWidget {
       ),
       initialBinding:
           InitBinding(), //앱 시작하자마서 InitBinding의 BottomNavController을 메모리에 등록
-      home: const App(), //앱 실행
+      home: const Root(), //앱 실행
     );
   }
 }

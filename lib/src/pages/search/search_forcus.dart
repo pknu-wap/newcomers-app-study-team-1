@@ -68,7 +68,9 @@ class _SearchForcusState extends State<SearchForcus>
       appBar: AppBar(
         elevation: 0,
         leading: GestureDetector(
-          // onTap: BottomNavController.to.willPopAction,
+          onTap: (){
+            //  BottomNavController.to.willPopAction,
+          },
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: ImageData(IconsPath.backBtnIcon), //search 페이지의 검색 뒤로가기 아이콘
