@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-# flutter_clone_instagram
-
-A new Flutter project.
-=======
 ---
 name: 이슈 생성 템플릿
 about: 해당 템플릿을 사용하여 이슈를 작성해주세요
@@ -20,4 +15,3 @@ assignees: ''
 
 ## 기타
 - 가능하다면 강의를 따라 getX를 사용하여 작성된 프로젝트를 setState로 재작성해보기
->>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a
