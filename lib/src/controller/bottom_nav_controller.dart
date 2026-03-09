@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 enum PageName { HOME, SEARCH, UPLOAD, ACTIVITY, MYPAGE }
 
 class BottomNavController extends GetxController {
-  // static BottomNavController get to => Get.find();
+  static BottomNavController get to => Get.find();
   RxInt pageIndex = 0.obs; //RxInt: 반응형 정수
   // GlobalKey<NavigatorState> searchPageNaviationKey =
   //     GlobalKey<NavigatorState>();
@@ -17,6 +17,8 @@ class BottomNavController extends GetxController {
 
   void changeBottomNav(int value, {bool hasGestrue = true}) {
     var page = PageName.values[value];
+    print(value);
+    print(page);
     switch (page) {
       case PageName.UPLOAD:
         Get.to(() => Upload()); //Upload실행
@@ -53,19 +55,20 @@ class BottomNavController extends GetxController {
         // showDialog는 비동기 함수이며, 사용자의 선택 결과를 기다림
         context: Get.context!, //현재 앱의 context사용
         barrierDismissible: false, //바깥 영역 눌르면 안 닫힘
-        builder: (context) => MessagePopup(
-          //보여줄 팝업
-          title: '시스템', //팝업 제목
-          message: '종료하시겠습니까?', //팝업 내용
-          okCallback: () {
-            //확인 버튼을 누르면 실행
-            Navigator.of(context).pop(true); //true값 반환
-          },
-          cancelCallback: () {
-            //취소 버튼을 누르면 실행
-            Navigator.of(context).pop(false); //false값 반환
-          },
-        ),
+        builder:
+            (context) => MessagePopup(
+              //보여줄 팝업
+              title: '시스템', //팝업 제목
+              message: '종료하시겠습니까?', //팝업 내용
+              okCallback: () {
+                //확인 버튼을 누르면 실행
+                Navigator.of(context).pop(true); //true값 반환
+              },
+              cancelCallback: () {
+                //취소 버튼을 누르면 실행
+                Navigator.of(context).pop(false); //false값 반환
+              },
+            ),
       );
 
       if (result == true) {

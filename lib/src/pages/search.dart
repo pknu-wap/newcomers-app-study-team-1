@@ -29,7 +29,6 @@ class _SearchState extends State<Search> {
       groupBox[gi].add(size);
       groupIndex[gi] += size;
     }
-    print(groupBox);
   }
 
   Widget _appbar() { //search 페이지 상단의 앱바
@@ -38,7 +37,7 @@ class _SearchState extends State<Search> {
         Expanded(
           child: GestureDetector(
             onTap: () {
-              // Get.to(SearchForcus()); //bottom 메뉴얼이 나오지 않음
+              Get.to(() => SearchForcus()); //bottom 메뉴얼이 나오지 않음
               Navigator.push( //위의 방식과 같지만 bottom 메뉴얼이 나옴
                 context,
                 MaterialPageRoute(builder: (context) => SearchForcus()),

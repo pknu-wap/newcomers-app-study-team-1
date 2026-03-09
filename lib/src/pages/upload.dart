@@ -5,7 +5,6 @@ import 'package:flutter_clone_instagram/src/components/image_data.dart';
 import 'package:photo_manager/photo_manager.dart';
 
 class Upload extends StatefulWidget {
-  //실행 되면
   const Upload({super.key});
 
   @override
@@ -43,10 +42,7 @@ class _UploadState extends State<Upload> {
   }
 
   void _loadData() async {
-    print('안녕하세요');
-    if (albums.isEmpty) {
-      return;
-    }
+    print(albums.first.name);
     headerTitle = albums.first.name;
     await _pagingPhotos();
     update();
@@ -55,9 +51,7 @@ class _UploadState extends State<Upload> {
   Future<void> _pagingPhotos() async {
     var photos = await albums.first.getAssetListPaged(page: 0, size: 30);
     imageList.addAll(photos);
-    if (imageList.isNotEmpty) {
-      selectedImage = imageList.first;
-    }
+    selectedImage = imageList.first;
   }
 
   void update() => setState(() {});
@@ -68,20 +62,16 @@ class _UploadState extends State<Upload> {
       width: width,
       height: width,
       color: Colors.grey,
-      child: selectedImage == null
-          ? Container()
-          : FutureBuilder(
-              future: selectedImage!.thumbnailDataWithSize(
-                ThumbnailSize(width.toInt(), width.toInt()),
+      child:
+          selectedImage == null
+              ? Container()
+              : _photoWidget(
+                selectedImage!,
+                width.toInt(),
+                builder: (data) {
+                  return Image.memory(data, fit: BoxFit.cover);
+                },
               ),
-              builder: (_, AsyncSnapshot<Uint8List?> snapshot) {
-                if (snapshot.hasData) {
-                  return Image.memory(snapshot.data!, fit: BoxFit.cover);
-                } else {
-                  return Container();
-                }
-              },
-            ),
     );
   }
 
@@ -91,16 +81,75 @@ class _UploadState extends State<Upload> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Row(
-              children: [
-                Text(
-                  '갤러리',
-                  style: TextStyle(color: Colors.black, fontSize: 18),
+          GestureDetector(
+            onTap: () {
+              showModalBottomSheet(
+                context: context,
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  ),
                 ),
-                Icon(Icons.arrow_drop_down),
-              ],
+                isScrollControlled: albums.length > 10 ? true : false,
+                constraints: BoxConstraints(
+                  maxHeight:
+                      MediaQuery.of(context).size.height -
+                      MediaQuery.of(context).padding.top,
+                ),
+                builder:
+                    (_) => Container(
+                      height:
+                          albums.length > 10
+                              ? Size.infinite.height
+                              : albums.length + 60,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Center(
+                            child: Container(
+                              margin: const EdgeInsets.only(top: 7),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.black54,
+                              ),
+                              width: 40,
+                              height: 4,
+                            ),
+                          ),
+                          Expanded(
+                            child: SingleChildScrollView(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: List.generate(
+                                  albums.length,
+                                  (index) => Container(
+                                    padding: const EdgeInsets.symmetric(
+                                      vertical: 15,
+                                      horizontal: 30,
+                                    ),
+                                    child: Text(albums[index].name),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+              );
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Row(
+                children: [
+                  Text(
+                    '갤러리',
+                    style: TextStyle(color: Colors.black, fontSize: 18),
+                  ),
+                  Icon(Icons.arrow_drop_down),
+                ],
+              ),
             ),
           ),
           Row(
@@ -142,7 +191,6 @@ class _UploadState extends State<Upload> {
   }
 
   Widget _imageSelectList() {
-    print(albums);
     return GridView.builder(
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
@@ -154,18 +202,36 @@ class _UploadState extends State<Upload> {
       ),
       itemCount: imageList.length,
       itemBuilder: (BuildContext context, int index) {
-        return Container(color: Colors.red);
-        // _photoWidget(imageList[index]);
+        return _photoWidget(
+          imageList[index],
+          200,
+          builder: (data) {
+            return GestureDetector(
+              onTap: () {
+                selectedImage = imageList[index];
+                update();
+              },
+              child: Opacity(
+                opacity: imageList[index] == selectedImage ? 0.3 : 1,
+                child: Image.memory(data, fit: BoxFit.cover),
+              ),
+            );
+          },
+        );
       },
     );
   }
 
-  Widget _photoWidget(AssetEntity asset) {
+  Widget _photoWidget(
+    AssetEntity asset,
+    int size, {
+    required Widget Function(Uint8List) builder,
+  }) {
     return FutureBuilder(
-      future: asset.thumbnailDataWithSize(const ThumbnailSize(200, 200)),
+      future: asset.thumbnailDataWithSize(ThumbnailSize(size, size)),
       builder: (_, AsyncSnapshot<Uint8List?> snapshot) {
         if (snapshot.hasData) {
-          return Image.memory(snapshot.data!, fit: BoxFit.cover);
+          return builder(snapshot.data!);
         } else {
           return Container();
         }

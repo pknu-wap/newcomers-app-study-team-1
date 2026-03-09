@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_clone_instagram/src/controller/bottom_nav_controller.dart';
 import 'package:flutter_clone_instagram/src/pages/home.dart';
 import 'package:flutter_clone_instagram/src/components/image_data.dart';
+import 'package:flutter_clone_instagram/src/pages/search.dart';
 import 'package:get/get.dart';
 
 class App extends GetView<BottomNavController> {
@@ -49,15 +50,15 @@ class App extends GetView<BottomNavController> {
             children: [
               //바뀔 예정
               const Home(),
+              const Search(),
               // Navigator(
-              //   // key: controller.searchPageNaviationKey,
-              //   onGenerateRoute: (routeSetting) {
+              //   key: controller.searchPageNaviationKey,
+              //   onGenerateRoute: (settings) {
               //     return MaterialPageRoute(
               //       builder: (context) => const Search(),
               //     );
               //   },
               // ),
-
               Container(child: Center(child: Text('UPLOAD'))),
               Container(child: Center(child: Text('ACTIVITY'))),
               Container(child: Center(child: Text('MYPAGE'))),
@@ -81,16 +82,16 @@ class App extends GetView<BottomNavController> {
               BottomNavigationBarItem(
                 icon: ImageData(IconsPath.searchOff),
                 activeIcon: ImageData(IconsPath.searchOn),
-                label: 'home',
+                label: 'search',
               ),
               BottomNavigationBarItem(
                 icon: ImageData(IconsPath.uploadIcon),
-                label: 'home',
+                label: 'upload',
               ),
               BottomNavigationBarItem(
                 icon: ImageData(IconsPath.activeOff),
                 activeIcon: ImageData(IconsPath.activeOn),
-                label: 'home',
+                label: 'active',
               ),
               BottomNavigationBarItem(
                 icon: Container(

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_clone_instagram/src/app.dart';
 import 'package:flutter_clone_instagram/src/components/image_data.dart';
 
 class SearchForcus extends StatefulWidget {
-  const SearchForcus({super.key});
+  const SearchForcus({super.key}); 
 
   @override
   State<SearchForcus> createState() => _SearchForcusState();
