@@ -17,6 +17,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
+<<<<<<< HEAD
   cached_network_image:
     dependency: "direct main"
     description:
@@ -41,6 +42,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.1"
+=======
+>>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a
   characters:
     dependency: transitive
     description:
@@ -57,6 +60,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.2"
+<<<<<<< HEAD
   code_assets:
     dependency: transitive
     description:
@@ -65,6 +69,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+=======
+>>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a
   collection:
     dependency: transitive
     description:
@@ -73,6 +79,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.19.1"
+<<<<<<< HEAD
   crypto:
     dependency: transitive
     description:
@@ -81,6 +88,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.7"
+=======
+>>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -89,6 +98,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
+<<<<<<< HEAD
   expandable_text:
     dependency: "direct main"
     description:
@@ -97,6 +107,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.0"
+=======
+>>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a
   fake_async:
     dependency: transitive
     description:
@@ -105,6 +117,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.3"
+<<<<<<< HEAD
   ffi:
     dependency: transitive
     description:
@@ -129,11 +142,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.1"
+=======
+>>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a
   flutter:
     dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
   flutter_cache_manager:
     dependency: transitive
     description:
@@ -142,6 +158,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.4.1"
+=======
+>>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -163,6 +181,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.7.3"
+<<<<<<< HEAD
   glob:
     dependency: transitive
     description:
@@ -195,6 +214,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.2"
+=======
+>>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a
   leak_tracker:
     dependency: transitive
     description:
@@ -227,6 +248,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.0"
+<<<<<<< HEAD
   logging:
     dependency: transitive
     description:
@@ -235,6 +257,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.0"
+=======
+>>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a
   matcher:
     dependency: transitive
     description:
@@ -259,6 +283,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.0"
+<<<<<<< HEAD
   native_toolchain_c:
     dependency: transitive
     description:
@@ -283,6 +308,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.0"
+=======
+>>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a
   path:
     dependency: transitive
     description:
@@ -291,6 +318,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
+<<<<<<< HEAD
   path_provider:
     dependency: transitive
     description:
@@ -379,6 +407,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.28.0"
+=======
+>>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a
   sky_engine:
     dependency: transitive
     description: flutter
@@ -392,6 +422,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.10.2"
+<<<<<<< HEAD
   sqflite:
     dependency: transitive
     description:
@@ -432,6 +463,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.0"
+=======
+>>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a
   stack_trace:
     dependency: transitive
     description:
@@ -456,6 +489,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.1"
+<<<<<<< HEAD
   synchronized:
     dependency: transitive
     description:
@@ -464,6 +498,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.4.0"
+=======
+>>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a
   term_glyph:
     dependency: transitive
     description:
@@ -480,6 +516,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.9"
+<<<<<<< HEAD
   typed_data:
     dependency: transitive
     description:
@@ -496,6 +533,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.5.3"
+=======
+>>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a
   vector_math:
     dependency: transitive
     description:
@@ -520,6 +559,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.1"
+<<<<<<< HEAD
   xdg_directories:
     dependency: transitive
     description:
@@ -539,3 +579,8 @@ packages:
 sdks:
   dart: ">=3.11.0 <4.0.0"
   flutter: ">=3.38.4"
+=======
+sdks:
+  dart: ">=3.11.0 <4.0.0"
+  flutter: ">=3.18.0-18.0.pre.54"
+>>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a

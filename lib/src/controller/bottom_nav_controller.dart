@@ -8,10 +8,14 @@ import 'package:get/get.dart';
 enum PageName { HOME, SEARCH, UPLOAD, ACTIVITY, MYPAGE }
 
 class BottomNavController extends GetxController {
+<<<<<<< HEAD
   static BottomNavController get to => Get.find();
   RxInt pageIndex = 0.obs;
   GlobalKey<NavigatorState> searchPageNavigationKey =
       GlobalKey<NavigatorState>();
+=======
+  RxInt pageIndex = 0.obs;
+>>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a
   List<int> bottomHistory = [0];
 
   void changeBottomNav(int value, {bool hasGesture = true}) {
@@ -33,11 +37,17 @@ class BottomNavController extends GetxController {
     if (bottomHistory.last != value) {
       bottomHistory.add(value);
     }
+<<<<<<< HEAD
     print(bottomHistory);
   }
 
   Future<bool> willPopAction() async {
     print("--- 뒤로가기 감지됨! 현재 히스토리: $bottomHistory ---");
+=======
+  }
+
+  Future<bool> willPopAction() async {
+>>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a
     if (bottomHistory.length == 1) {
       showDialog(
         context: Get.context!,
@@ -51,6 +61,7 @@ class BottomNavController extends GetxController {
         ),
       );
       return false;
+<<<<<<< HEAD
       // return true;
     } else {
       var page = PageName.values[bottomHistory.last];
@@ -60,6 +71,9 @@ class BottomNavController extends GetxController {
         if (value == true) return false; // ?사용으로 value타입이 bool?이 됨. 따라서 기본값 명시
       }
 
+=======
+    } else {
+>>>>>>> 6c249cdf6177290b614762a7de4431f3c5da774a
       bottomHistory.removeLast();
       var index = bottomHistory.last;
       changeBottomNav(index, hasGesture: false);
