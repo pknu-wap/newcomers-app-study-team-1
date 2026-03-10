@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clone_instagram/src/components/image_data.dart';
+import 'package:get/get.dart';
 
 class SearchForcus extends StatefulWidget {
-  const SearchForcus({super.key}); 
+  const SearchForcus({super.key});
 
   @override
   State<SearchForcus> createState() => _SearchForcusState();
@@ -18,14 +19,16 @@ class _SearchForcusState extends State<SearchForcus>
     tabController = TabController(length: 5, vsync: this);
   }
 
-  Widget _tabMenuOne(String menu) { //탭바의 이름을 받아 탭바 생성
+  Widget _tabMenuOne(String menu) {
+    //탭바의 이름을 받아 탭바 생성
     return Padding(
       padding: const EdgeInsetsGeometry.symmetric(vertical: 15),
       child: Text(menu, style: TextStyle(fontSize: 15, color: Colors.black)),
     );
   }
 
-  PreferredSizeWidget _tapMenu() { //search 페이지의 검색 상단 탭바 구현
+  PreferredSizeWidget _tapMenu() {
+    //search 페이지의 검색 상단 탭바 구현
     return PreferredSize(
       child: Container(
         height: AppBar().preferredSize.height,
@@ -49,8 +52,9 @@ class _SearchForcusState extends State<SearchForcus>
     );
   }
 
-  Widget _body() { //search 페이지의 검색 중하단 페이지 구현
-    return TabBarView( 
+  Widget _body() {
+    //search 페이지의 검색 중하단 페이지 구현
+    return TabBarView(
       controller: tabController,
       children: const [
         Center(child: Text('인기페이지')),
@@ -63,12 +67,14 @@ class _SearchForcusState extends State<SearchForcus>
   }
 
   @override
-  Widget build(BuildContext context) { //search 페이지의 검색 구현
+  Widget build(BuildContext context) {
+    //search 페이지의 검색 구현
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
         leading: GestureDetector(
-          onTap: (){
+          onTap: () {
+            Get.back();
             //  BottomNavController.to.willPopAction,
           },
           child: Padding(
@@ -77,7 +83,8 @@ class _SearchForcusState extends State<SearchForcus>
           ),
         ),
         titleSpacing: 0,
-        title: Container( //search 페이지의 검색 상단의 검색바 구현
+        title: Container(
+          //search 페이지의 검색 상단의 검색바 구현
           margin: const EdgeInsets.only(right: 15),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(6),
