@@ -12,7 +12,20 @@
           "package_name": "com.example.newcomera_app_study_team_1"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "489909806426-27scs7ngi9llu4jk029q19fq1p06057e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.newcomera_app_study_team_1",
+            "certificate_hash": "ba366c2dbd896688753527808008b9188bdf4d97"
+          }
+        },
+        {
+          "client_id": "489909806426-i9m9h11ct3c8pr8vo3qmcsck2gicao6b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCrW5ARGIqc72noEVd3ks_DFUQ289OW0tA"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489909806426-i9m9h11ct3c8pr8vo3qmcsck2gicao6b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "489909806426-ni812vdqfit0sppr3rl3lc43sn860kfo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.newcomeraAppStudyTeam1"
+              }
+            }
+          ]
         }
       }
     }

@@ -3,7 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
-import 'api.dart';
+import 'package:flutter_clone_instagram/api.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
