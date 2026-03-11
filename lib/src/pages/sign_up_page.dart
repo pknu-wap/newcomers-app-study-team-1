@@ -15,6 +15,7 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
   TextEditingController nicknameController = TextEditingController();
+  // TextEditingController thumbnailController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
   final ImagePicker _picker = ImagePicker();
   XFile? thumbnailXFile;
@@ -122,6 +123,7 @@ class _SignupPageState extends State<SignupPage> {
           onPressed: () {
             var signupUser = IUser(
               uid: widget.uid,
+              // thumbnail: thumbnailController.text,
               nickname: nicknameController.text,
               description: descriptionController.text,
             );
